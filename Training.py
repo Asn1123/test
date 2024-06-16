@@ -68,6 +68,59 @@ def makePyramid(height):
             spline = spline + " "
         print(spline + stline)
            
+makePyramid(25)
 
+arr = [423,726,2,64,894,71,462,2,1,8,3434,119.45,682,245,546,111]
 
-makePyramid(10)
+def bubbleSort():
+    global arr # by-reference
+    
+    for _ in range(len(arr)):
+        for j in range(len(arr)-1):
+            if arr[j]>arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# every variable has a memory address, and the value is stored at that memory address
+# in by-value, a copy of the value is passed to the function
+# in by-reference, the memory address is passed to the function
+
+bubbleSort()           
+
+def binarySearch():
+    global arr
+
+    valuetofind = float(input("Enter the value to find: "))
+    start = 0
+    end = len(arr)-1
+    while start<=end:
+        mid = (start+end)//2
+        if arr[mid]==valuetofind:
+            return mid
+        elif arr[mid]<valuetofind:
+            start = mid+1
+        else:
+            end = mid-1
+
+    return -1
+
+# only works when the array is sorted
+# print(binarySearch())    
+
+def linearSearch():
+    global arr
+
+    valuetofind = float(input("Enter the value to find: "))
+    Flag = False
+    value = -1
+    # write logic here
+    for i in range(len(arr)):
+        if arr[i] == valuetofind:
+            Flag = True
+            value = i
+    if Flag == True:
+        print("Value was found at array location :",value)
+    else:
+        print("Value was not found in the array")
+        
+linearSearch()
