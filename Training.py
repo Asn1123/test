@@ -4,7 +4,7 @@
 # here is the variable
 temp = 0.12
 myStr = "Hello Ayaan"
-myBool= True
+myBool= False
 myInt = 3
 myList = [1,2,3,4,5]
 
